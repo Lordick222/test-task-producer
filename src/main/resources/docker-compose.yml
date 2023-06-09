@@ -2,15 +2,13 @@ version: "2"
 
 services:
   postgresql:
-    image: 'bitnami/postgresql:latest'
-    ports:
-      - '3723:5438'
-    volumes:
-      - 'postgresql_master_data:/bitnami/postgresql'
+    image: postgres:13.3
     environment:
-      - POSTGRESQL_USERNAME=postgres
-      - POSTGRESQL_PASSWORD=postgres
-      - POSTGRESQL_DATABASE=db_sba
+      POSTGRES_DB: "test"
+      POSTGRES_USER: "test"
+      POSTGRES_PASSWORD: "test"
+    ports:
+      - "5432:5432"
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     environment:
