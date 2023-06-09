@@ -13,7 +13,7 @@ public class KafkaConfig {
     private String stringsUnder100TopicName;
 
     @Bean
-    NewTopic dtosToGetDiff() {
+    NewTopic stringUnder100Producer() {
         return TopicBuilder.name(stringsUnder100TopicName).partitions(1).build();
     }
 }
